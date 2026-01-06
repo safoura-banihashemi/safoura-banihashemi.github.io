@@ -1,10 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Safoura's Website</title>
+  <meta charset="UTF-8">
+  <title>Safoura | AI Student</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello, I'm Safoura 👋</h1>
-  <p>This is my personal website hosted on GitHub Pages.</p>
+
+<nav>
+  <a class="active" href="#">about</a>
+  <a href="#">blog</a>
+  <a href="#">projects</a>
+  <a href="#">repositories</a>
+  <a href="#">CV</a>
+</nav>
+
+<main>
+  <section class="about">
+    <div class="text">
+      <h1><span>Safoura</span> AI Student</h1>
+
+      <p>
+        Hi! I’m Safoura, a master’s student in Artificial Intelligence in Italy.
+        I write technical articles about Machine Learning and Large Language Models
+        to learn by sharing.
+      </p>
+
+      <p>
+        My interests include:
+      </p>
+
+      <ul>
+        <li>Large Language Models</li>
+        <li>Machine Learning & NLP</li>
+        <li>AI Research</li>
+        <li>AI Interpretability</li>
+      </ul>
+
+      <p>
+        I’m particularly interested in practical and efficient AI methods,
+        such as LoRA and QLoRA, and their real-world applications.
+      </p>
+    </div>
+
+    <div class="profile">
+      <img src="assets/profile.jpg" alt="Profile photo">
+      <p class="role">AI Student</p>
+      <p class="role">MSc Student</p>
+      <p>
+        <a href="mailto:your@email.com">Email</a> |
+        <a href="https://linkedin.com">LinkedIn</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="posts">
+    <h2>latest posts</h2>
+
+    <div class="post">
+      <span class="date">Aug 15, 2024</span>
+      <a href="posts/lora-qlora.html">
+        Understanding LoRA and QLoRA for Efficient Fine-Tuning
+      </a>
+    </div>
+
+    <div class="post">
+      <span class="date">Aug 07, 2024</span>
+      <a href="posts/llm-intro.html">
+        How Large Language Models Predict the Next Token
+      </a>
+    </div>
+  </section>
+</main>
+
 </body>
 </html>
+
