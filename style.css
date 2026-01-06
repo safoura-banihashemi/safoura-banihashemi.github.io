@@ -1,0 +1,77 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  background: #fff;
+  color: #111;
+}
+
+nav {
+  padding: 20px 40px;
+}
+
+nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+nav a.active {
+  color: #d100d1;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px;
+}
+
+.about {
+  display: flex;
+  gap: 60px;
+}
+
+.about h1 span {
+  font-weight: 800;
+}
+
+.about ul {
+  padding-left: 20px;
+}
+
+.profile img {
+  width: 260px;
+  border-radius: 8px;
+}
+
+.role {
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.posts {
+  margin-top: 80px;
+}
+
+.posts h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.post {
+  margin-bottom: 15px;
+}
+
+.date {
+  display: inline-block;
+  width: 120px;
+  color: #555;
+}
+
+.post a {
+  color: #d100d1;
+  text-decoration: none;
+}
+
+.post a:hover {
+  text-decoration: underline;
+}
