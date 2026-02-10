@@ -1,0 +1,714 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>1</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2b336bbf-e0b5-805c-b287-ecf5e8280463" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1645570990200-2701a49d45ca?ixlib=rb-4.1.0&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 47.84%"/><h1 class="page-title" dir="auto">1</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-80b4-81a5-ed51395393af" class="">🔴<strong> </strong><mark class="highlight-red"><strong>Note: These notes are based on my understanding of the paper.</strong></mark></p></div><div style="display:contents" dir="ltr"><figure id="2b336bbf-e0b5-800b-b031-ecbdd18405a2" class="image"><a href="55a5172b-b2b1-44f7-8260-88b7c6b4fd65.png"><img style="width:710px" src="55a5172b-b2b1-44f7-8260-88b7c6b4fd65.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2b636bbf-e0b5-808e-89a2-c414e0c1bd66" class="">👉 <mark class="highlight-default">To better understand this paper, it is important to first explore its focus.</mark></p></div><div style="display:contents" dir="auto"><h3 id="2c236bbf-e0b5-8033-94cc-e8838b1e6813" class="">⚖️<mark class="highlight-blue"> What is Legal Argumentation ?</mark></h3></div><div style="display:contents" dir="auto"><div id="2c236bbf-e0b5-8047-80a0-eba69b191d68" class="column-list"><div style="display:contents" dir="auto"><div id="2c236bbf-e0b5-8010-a50a-c121cf723cdc" style="width:106.25%" class="column"><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-80dc-b780-feca96f48645" class="">An argumentation is a set of statements intended to convince the judge or jury that desired conclusion is correct under the law.</p></div></div></div><div style="display:contents" dir="auto"><div id="2c236bbf-e0b5-80a0-b7a9-e59668fe821c" style="width:24.999999999999996%" class="column"><div style="display:contents" dir="ltr"><figure id="2c236bbf-e0b5-8099-bb83-f0b81bc6ede4" class="image" style="text-align:center"><a href="image.png"><img style="width:331.9875183105469px" src="image.png"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-80b4-bd40-db4db7603def" class="">So, argumentation acts as bridge between its two components, <mark class="highlight-default"><mark class="highlight-teal_background">Premises</mark></mark> and <mark class="highlight-teal_background">Conclusion</mark>. </p></div><div style="display:contents" dir="auto"><ul id="2c236bbf-e0b5-8009-825b-c10fe477dc6c" class="bulleted-list"><li style="list-style-type:disc">Premise (P): is a sentence that gives a reason, evidence, or rule to support claim.</li></ul></div><div style="display:contents" dir="auto"><ul id="2c236bbf-e0b5-80c9-b3bd-c7149cb6e1cb" class="bulleted-list"><li style="list-style-type:disc">Conclusion (C): is the main claim that follows from the premises.</li></ul></div><div style="display:contents" dir="auto"><h3 id="2c236bbf-e0b5-80ca-89b0-d3cca8594cb3" class="">👩‍⚖️ <mark class="highlight-blue">What is Argument Mining (AM)?</mark></h3></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-804c-9c40-d8769b1b75dc" class="">By using ML and NLP, tries to address these problems 👇</p></div><div style="display:contents" dir="auto"><ol type="1" id="2c236bbf-e0b5-80fb-9a05-d9747338219b" class="numbered-list" start="1"><li>Find argumentative sentence in document</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2c236bbf-e0b5-8029-aca7-e52568835e7d" class="numbered-list" start="2"><li>Classify them (premise, conclusion)</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2c236bbf-e0b5-8019-8f2d-e6980ed040c9" class="numbered-list" start="3"><li>Predict relations between them (support, attack, etc.)</li></ol></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-80a9-9d63-eb64e7f3c4b1" class="">This paper focuses on STEP 3, <strong>argument structure prediction </strong>in judicial decisions by the Court of Justice of the European Union on Fiscal State Aid. </p></div><div style="display:contents" dir="auto"><hr id="2b536bbf-e0b5-80bc-a9a1-d91d020cf9ff"/></div><div style="display:contents" dir="auto"><h3 id="2b636bbf-e0b5-800f-98ae-ccbb61743a53" class=""><mark class="highlight-blue">The relation between these statements is :</mark></h3></div><div style="display:contents" dir="auto"><ol type="1" id="2be36bbf-e0b5-8072-a8e4-ce236f3c3511" class="numbered-list" start="1"><li><mark class="highlight-orange">Support</mark> (SUP): The premise supports the conclusion</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2be36bbf-e0b5-8096-9486-c9759eb68fee" class="numbered-list" start="2"><li><mark class="highlight-orange">rebuttal</mark> (ATT): The conclusion attacks the premise</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2be36bbf-e0b5-8017-b427-d752a6188ad7" class="numbered-list" start="3"><li><mark class="highlight-orange">Support from Failure</mark> (SFF): The premise supports the conclusion because of absence, not presence, of evidence.</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2be36bbf-e0b5-80cc-b1b6-f15f2e51d99e" class="numbered-list" start="4"><li><mark class="highlight-orange">Undercut</mark> (INH): The premise attacks the other premise (citation)</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2be36bbf-e0b5-80b3-996a-d8c5809eae68" class="numbered-list" start="5"><li><mark class="highlight-orange">Rephrase</mark> (REPH): The premise is rephrase of other premise.</li></ol></div><div style="display:contents" dir="auto"><div id="2be36bbf-e0b5-8059-b174-c30cee48c55d" class="column-list"><div style="display:contents" dir="auto"><div id="2be36bbf-e0b5-801f-b3ea-dfb1202c374b" style="width:31.25%" class="column"><div style="display:contents" dir="ltr"><figure id="2be36bbf-e0b5-8007-b755-fe08e37bacc3" class="image" style="text-align:left"><a href="0749087e-796f-4394-b80a-ac4d14587bff.png"><img style="width:240px" src="0749087e-796f-4394-b80a-ac4d14587bff.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="2be36bbf-e0b5-80ba-9386-ed4dc40b9fa2" style="width:99.99999999999999%" class="column"><div style="display:contents" dir="auto"><h3 id="2be36bbf-e0b5-807d-860f-c99a9893587b" class=""> 📝<mark class="highlight-blue">Example: </mark></h3></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8044-8b08-f9db32bb8be2" class=""> For better understanding, I’ll bring an example :</p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8020-8f56-c4ea8e3030f3" class=""> A judge is deciding whether a company received illegal State aid or not?</p></div></div></div></div></div><div style="display:contents" dir="auto"><blockquote id="2be36bbf-e0b5-805c-a4d5-d8d585db1990" class="">P1: The tax exemption given to Company X reduces the charges the company would normally pay.<div style="display:contents" dir="auto"><p id="2be36bbf-e0b5-8052-81ff-e1b1a22a6804" class="">P2: According to EU case law, a measure that reduces charges which companies normally bear can constitute State aid.</p></div><div style="display:contents" dir="auto"><p id="2be36bbf-e0b5-802c-a2c7-f3fc8d66250f" class="">C1: Therefore, the tax exemption may constitute State aid.</p></div></blockquote></div><div style="display:contents" dir="auto"><div id="2be36bbf-e0b5-8068-a0a8-c9614a376dc6" class="column-list"><div style="display:contents" dir="auto"><div id="2be36bbf-e0b5-8092-98cd-f22e27648735" style="width:100%" class="column"><div style="display:contents" dir="auto"><p id="2be36bbf-e0b5-8034-808b-e405918bc1d5" class=""><mark class="highlight-orange">⇒</mark><strong> </strong><mark class="highlight-orange"><strong>P1 </strong></mark><mark class="highlight-orange">SUP</mark><mark class="highlight-orange"><strong> C1</strong></mark></p></div></div></div><div style="display:contents" dir="auto"><div id="2be36bbf-e0b5-80e7-b25e-ea76a1ad0de1" style="width:100%" class="column"><div style="display:contents" dir="auto"><p id="2be36bbf-e0b5-80f3-9c91-e03f348a2b14" class=""><mark class="highlight-orange">⇒</mark><mark class="highlight-orange"><strong> P2 </strong></mark><mark class="highlight-orange">SUP</mark><mark class="highlight-orange"><strong> C1</strong></mark></p></div></div></div></div></div><div style="display:contents" dir="auto"><blockquote id="2be36bbf-e0b5-805a-ae4b-f9b5bc25edab" class="">P3: The government argues that the exemption simply compensates for a structural disadvantage.<div style="display:contents" dir="auto"><p id="2be36bbf-e0b5-80f8-b714-cfc86bfbf221" class="">P4: However, the company has not provided evidence of any structural disadvantage.</p></div><div style="display:contents" dir="auto"><p id="2be36bbf-e0b5-80d5-8aa2-d291f9667f61" class="">C2: Therefore, the argument based on structural disadvantage must be rejected.</p></div></blockquote></div><div style="display:contents" dir="auto"><div id="2be36bbf-e0b5-808e-b32e-e97cb47c2d7e" class="column-list"><div style="display:contents" dir="auto"><div id="2be36bbf-e0b5-80e5-b397-dde463a04cfe" style="width:100%" class="column"><div style="display:contents" dir="auto"><p id="2be36bbf-e0b5-80aa-9939-d23d5af5a920" class=""><mark class="highlight-orange">⇒</mark><mark class="highlight-orange"><strong> C2 </strong></mark><mark class="highlight-orange">ATT</mark><mark class="highlight-orange"><strong> P3</strong></mark></p></div></div></div><div style="display:contents" dir="auto"><div id="2be36bbf-e0b5-8095-b545-db8c9d3109bc" style="width:100%" class="column"><div style="display:contents" dir="auto"><p id="2be36bbf-e0b5-80e2-bb62-f26d16842086" class=""><mark class="highlight-orange">⇒ </mark><mark class="highlight-orange"><strong>P4 </strong></mark><mark class="highlight-orange">SFF</mark><mark class="highlight-orange"><strong> C2</strong></mark></p></div></div></div></div></div><div style="display:contents" dir="auto"><blockquote id="2be36bbf-e0b5-8072-9555-ec2a4161c18a" class="">P5: The government also cites the “SolarWind” judgment to justify the exemption.<div style="display:contents" dir="auto"><p id="2be36bbf-e0b5-8040-b61e-c0a60e60f7a9" class="">P6: But that case concerned renewable energy subsidies, not tax exemptions.</p></div><div style="display:contents" dir="auto"><p id="2be36bbf-e0b5-8021-a564-d722b134cae8" class="">C3: Thus, the “SolarWind” judgment is not applicable here.</p></div></blockquote></div><div style="display:contents" dir="auto"><p id="2be36bbf-e0b5-8080-9502-c5867bd731ef" class=""><mark class="highlight-orange">⇒ </mark><mark class="highlight-orange"><strong>P6 </strong></mark><mark class="highlight-orange">INH</mark><mark class="highlight-orange"><strong> P5 </strong></mark><mark class="highlight-default">→ P6 questions the logic of P5</mark></p></div><div style="display:contents" dir="auto"><p id="2be36bbf-e0b5-807e-946d-f66d2a0f05d7" class="">If we have also,</p></div><div style="display:contents" dir="auto"><blockquote id="2be36bbf-e0b5-807b-99fd-db0f4fdcf780" class="">P1b: Company X received a reduction of its normal fiscal burden.</blockquote></div><div style="display:contents" dir="auto"><p id="2be36bbf-e0b5-8055-b0ba-f3074d72b5d0" class=""><mark class="highlight-orange">⇒ </mark><mark class="highlight-orange"><strong>P1 </strong></mark><mark class="highlight-orange">REPH</mark><mark class="highlight-orange"><strong> P1b </strong></mark><mark class="highlight-default"><strong>→</strong></mark><mark class="highlight-default"> they say the same thing</mark></p></div><div style="display:contents" dir="auto"><hr id="2be36bbf-e0b5-8039-ba5f-f1b168ab9153"/></div><div style="display:contents" dir="ltr"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2be36bbf-e0b5-80b3-9f24-f44d2f5d7d5b"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><div style="display:contents" dir="auto"><p id="2be36bbf-e0b5-8056-80cf-e39c9b620b1b" class="">Note: This paper enrich the  <strong>Demosthenes</strong> dataset introduced in below paper with an additional layer of annotation to capture the inferential connections between propositions.</p></div><div style="display:contents" dir="auto"><blockquote id="2be36bbf-e0b5-800e-bb88-f3c3087b641c" class="">Giulia Grundler, Piera Santin, Andrea Galassi, Federico Galli, Francesco Godano,<br/>Francesca Lagioia, Elena Palmieri, Federico Ruggeri, Giovanni Sartor, and Paolo<br/>Torroni. 2022. Detecting Arguments in CJEU Decisions on Fiscal State Aid. In<br/>ArgMining@COLING. 143–157.</blockquote></div></div></figure></div><div style="display:contents" dir="auto"><hr id="2be36bbf-e0b5-8030-b918-cd3e22869b3f"/></div><div style="display:contents" dir="auto"><h3 id="2be36bbf-e0b5-80e1-bb7f-cdba5d3f2a55" class="">📊 <mark class="highlight-blue">Demosthenes Dataset:</mark></h3></div><div style="display:contents" dir="ltr"><figure id="2c036bbf-e0b5-80b4-b218-c85df77c56ee" class="image"><a href="image%201.png"><img style="width:709.9500122070312px" src="image%201.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2c036bbf-e0b5-80aa-8a62-f63d3c00437f" class="">🟩 Every argumentative statement is annotated as either a <strong>Premise</strong> or a <strong>Conclusion</strong>.</p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8060-b0e1-c8099c69bc32" class="">🟩 Each statement has a unique identifier (such as <style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">A_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>, <style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">B_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0502em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>).</p></div><div style="display:contents" dir="auto"><p id="2c036bbf-e0b5-805c-89bb-c8a89e752e93" class="">🟩 Each premise has type, which can be <strong>Legal</strong> or <strong>Factual.</strong></p></div><div style="display:contents" dir="auto"><p id="2c036bbf-e0b5-808c-9b06-f61507aa3362" class="">🟩 Premises may also include an optional attribute called the Argumentation Scheme. These schemes describe how the premise supports the conclusion. </p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8098-8594-daa88180025e" class="">👉 <mark class="highlight-blue"><strong>Data Annotation:</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-806e-9976-da48e7551569" class="">The paper enrich dataset by adding additional annotation and determine the relation between the argumentative statements.</p></div><div style="display:contents" dir="ltr"><figure id="2c236bbf-e0b5-8090-b025-ddb7031d4a43" class="image"><a href="image%202.png"><img style="width:528px" src="image%202.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2c036bbf-e0b5-8002-8dad-ec7230f965a7" class="">👉 <mark class="highlight-blue"><strong>Data Preparation:</strong></mark> </p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-804d-8dfc-d28bc9d43b7e" class="">The number of possible argumentative pairs in a document grows very fast, especially for the negative pairs 👉 This causes imbalance dataset means most pairs will have no argumentative link and a high computational cost. </p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8015-8573-cc464aa37439" class="">💡 To handle this, the authors implement a <mark class="highlight-red"><strong>spatial distance strategy</strong></mark>.<strong> </strong>➡️ considering only pairs which their distance is below a certain threshold. This reduces the number of negative pairs while keeping the pairs that are most likely to contain real argumentative links.</p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8087-9625-e51212045d08" class="">Considering two threshold:</p></div><div style="display:contents" dir="auto"><ul id="2c236bbf-e0b5-80d7-996e-cb933619a4c9" class="bulleted-list"><li style="list-style-type:disc"><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mrow><mi>s</mi><mi>m</mi><mi>a</mi><mi>l</mi><mi>l</mi></mrow></msub></mrow><annotation encoding="application/x-tex">W_{small}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">ma</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">ll</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>: Includes pairs within the range of <style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mo>−</mo><mn>3</mn><mo separator="true">,</mo><mn>7</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[-3, 7]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">−</span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">7</span><span class="mclose">]</span></span></span></span></span><span>﻿</span></span>. This range includes 77% of the links in the training sets.</li></ul></div><div style="display:contents" dir="auto"><ul id="2c236bbf-e0b5-8096-9a93-c4a5cddc826a" class="bulleted-list"><li style="list-style-type:disc"><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mrow><mi>l</mi><mi>a</mi><mi>r</mi><mi>g</mi><mi>e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">W_{large}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span><span class="mord mathnormal mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>:  Includes pairs within the range <style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mo>−</mo><mn>6</mn><mo separator="true">,</mo><mn>14</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[-6, 14]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">−</span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">14</span><span class="mclose">]</span></span></span></span></span><span>﻿</span></span>. This range includes 90% of the links in the training sets.</li></ul></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-80af-bbaf-d26c4362db60" class="">✨ Note : To evaluate the impact of using distance thresholds, models were tested also on original test set.</p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-806a-8bd4-de90c65fb149" class="">👉 <mark class="highlight-blue"><strong>Oversampling:</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8069-960b-de552a2cdcc3" class="">It is a technique used in ML to deal with datasets where one class is much smaller than the others (class imbalance).</p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8078-8b61-e649b263df56" class="">Oversampling addresses this by:</p></div><div style="display:contents" dir="auto"><ol type="1" id="2c236bbf-e0b5-8068-b0e0-d8027ce9d87a" class="numbered-list" start="1"><li>Finding the small class</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2c236bbf-e0b5-80db-a3ac-ca00d51d09d8" class="numbered-list" start="2"><li>Duplicating the rare samples to increase their number in the training set</li></ol></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8082-a8f9-e8f5ae031d79" class="">This makes the training set more balanced.</p></div><div style="display:contents" dir="ltr"><figure id="2c236bbf-e0b5-8067-91b3-da5960dd28b7" class="image"><a href="image%203.png"><img style="width:709.96875px" src="image%203.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-800e-b32f-e4508dbfcea8" class="">🟢 In the paper, the authors oversample positive argumentative pairs in the training set by a 9 and 17 factor in the <style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝑊</mi><mrow><mi>𝑠</mi><mi>𝑚</mi><mi>𝑎</mi><mi>𝑙</mi><mi>𝑙</mi></mrow></msub></mrow><annotation encoding="application/x-tex">𝑊_{𝑠𝑚𝑎𝑙𝑙}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">ma</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">ll</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> and <style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝑊</mi><mrow><mi>𝑙</mi><mi>𝑎</mi><mi>𝑟</mi><mi>𝑔</mi><mi>𝑒</mi></mrow></msub></mrow><annotation encoding="application/x-tex">𝑊_{𝑙𝑎𝑟𝑔𝑒}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span><span class="mord mathnormal mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> training settings, respectively.</p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8059-b5c2-d6a5b27e85a5" class="">👉 <mark class="highlight-blue"><strong>Splitting:</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2c036bbf-e0b5-8091-adcf-ee91b2f8b247" class="">For data splitting, they applied <mark class="highlight-red"><strong>document-level random split</strong></mark>, meaning that each document is assigned to either the training, validation, or test set randomly, and all text segments from that document stay in the same split.</p></div><div style="display:contents" dir="auto"><hr id="2c036bbf-e0b5-8079-9cf3-d51ec358a4dc"/></div><div style="display:contents" dir="auto"><h3 id="2c236bbf-e0b5-80df-badb-d3c15b95a271" class="">🧐 <mark class="highlight-blue">Models:</mark></h3></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8050-800b-e3c9397b7fef" class="">🌟 The main task is a binary classification problem to determine whether a link exists between two inputs, source and target, extracted from the same document.</p></div><div style="display:contents" dir="auto"><p id="2c036bbf-e0b5-802e-a5bc-e31702ffc125" class="">The authors used four models:</p></div><div style="display:contents" dir="auto"><ol type="1" id="2c236bbf-e0b5-8090-a263-c2d04e8ce9fd" class="numbered-list" start="1"><li><mark class="highlight-orange"><strong>Uniform Random Classifier</strong></mark> (baseline)<div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8072-84b4-d75e5e46e732" class="">➡️ Assigns a link (positive) or no-link (negative) prediction <strong>randomly</strong> to each argumentative pair.</p></div></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2c236bbf-e0b5-804a-b74d-e309f3b590a3" class="numbered-list" start="2"><li><mark class="highlight-orange"><strong>Majority Classifier</strong></mark> (baseline)<div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-800b-962b-ea046f82c3f3" class="">➡️ Predicts the <strong>majority class</strong> (no-link) for every argumentative pair.</p></div></li></ol></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-80a2-824e-d6a91a6aea0e" class="">💡 Note: They are non-learning algorithms. They are used to understand whether the real models actually learn something useful.</p></div><div style="display:contents" dir="auto"><ol type="1" id="2c236bbf-e0b5-80e8-93f8-e88e5f446fdd" class="numbered-list" start="3"><li><mark class="highlight-orange"><strong>ResAttArg Ensemble</strong></mark> (Residual Attention Networks)<div style="display:contents" dir="ltr"><figure id="2c236bbf-e0b5-80b1-9ce8-c2684dab536c" class="image" style="text-align:center"><a href="image%204.png"><img style="width:240px" src="image%204.png"/></a></figure></div><div style="display:contents" dir="auto"><ol type="a" id="2c236bbf-e0b5-80ea-b684-d7351f212673" class="numbered-list" start="1"><li><mark class="highlight-teal">Embedding</mark><div style="display:contents" dir="auto"><ul id="2c236bbf-e0b5-8009-bef8-e66990db891f" class="bulleted-list"><li style="list-style-type:disc">Before the inputs hit the first layer, the sentences are converted into numerical vector representations. The model uses <mark class="highlight-teal_background"><strong>300-dimensional GloVe pre-trained embeddings</strong></mark> for text representation.</li></ul></div><div style="display:contents" dir="auto"><ul id="2c236bbf-e0b5-8052-84e5-e40d551c4c34" class="bulleted-list"><li style="list-style-type:disc">The distance between the Source and the Target is encoded as a <mark class="highlight-teal_background"><strong>10-bit array</strong></mark>.</li></ul></div></li></ol></div><div style="display:contents" dir="auto"><ol type="a" id="2c236bbf-e0b5-80f9-82e6-fb94f8c74291" class="numbered-list" start="2"><li><mark class="highlight-teal">Dense Layers</mark><div style="display:contents" dir="auto"><ul id="2c236bbf-e0b5-802d-9a32-e15133216756" class="bulleted-list"><li style="list-style-type:disc">These are standard fully connected layers. They perform initial transformations on the input to extract relevant patterns for the classification task.</li></ul></div></li></ol></div><div style="display:contents" dir="auto"><ol type="a" id="2c236bbf-e0b5-80b4-ac5e-d215a6043381" class="numbered-list" start="3"><li><mark class="highlight-teal">BiLSTM</mark> (Bidirectional Long Short-Term Memory)<div style="display:contents" dir="auto"><ul id="2c236bbf-e0b5-8029-842a-c45a260a81e6" class="bulleted-list"><li style="list-style-type:disc">LSTMs are specialized RNNs used to process sequences (like sentences). A <strong>BiLSTM</strong> processes the input sequence in <strong>both forward and backward directions</strong>. This allows the model to capture context from both the words preceding (forward pass) and the words following (backward pass), ➡️ causes a better understanding of the entire sentence&#x27;s meaning.</li></ul></div></li></ol></div><div style="display:contents" dir="auto"><ol type="a" id="2c236bbf-e0b5-803e-acf3-e845e72a9c26" class="numbered-list" start="4"><li><mark class="highlight-teal">Co-Attention</mark><div style="display:contents" dir="auto"><ul id="2c236bbf-e0b5-80bc-8e02-c15ad2a676c8" class="bulleted-list"><li style="list-style-type:disc">This is critical for linking. It allows the model to simultaneously pay attention to <strong>related words or concepts</strong> in both the source sentence and the target sentence. 💥 It finds the dependencies between the two inputs, which is exactly what an argumentative link prediction model needs to do.</li></ul></div></li></ol></div><div style="display:contents" dir="auto"><ol type="a" id="2c236bbf-e0b5-8054-a46e-cd68afcb32e8" class="numbered-list" start="5"><li><mark class="highlight-teal">Residual Connections</mark><div style="display:contents" dir="auto"><ul id="2c236bbf-e0b5-80c7-98bd-c35e4dc85be2" class="bulleted-list"><li style="list-style-type:disc">Also known as <strong>skip connections</strong>. These connections allow the input from a layer to be passed forward and added directly to the output of a subsequent layer. This mechanism helps to prevent the <strong>vanishing gradient problem</strong> during training, enabling the network to be much deeper and allowing it to train more effectively.</li></ul></div></li></ol></div><div style="display:contents" dir="auto"><ol type="a" id="2c236bbf-e0b5-803b-9a4d-eb34d4c39e29" class="numbered-list" start="6"><li><mark class="highlight-teal">Classification Heads</mark><div style="display:contents" dir="auto"><ul id="2c236bbf-e0b5-8006-9a5f-fa07292d6baa" class="bulleted-list"><li style="list-style-type:disc">This is the final layer that processed features and maps them to the final outputs. Since ResAttArg is a <strong>multi-task network</strong>, it produces four outputs:<div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8057-a907-e9fb31f06647" class="">1️⃣ Source Classification: Predicts the argumentative type of the Target (e.g., premise or conclusion)</p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-801d-b255-d5d96538b094" class="">2️⃣ Target Classification: Predicts the argumentative type of the Target (e.g., premise or conclusion)</p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8040-b52d-d2939e656e57" class="">3️⃣ Link Prediction: Predicts whether a link exists from Source to Target (binary classification).</p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-80dc-81c0-e65a090e8ea6" class="">4️⃣ Relationship Classification: Predicts the link&#x27;s type (e.g., SUP, ATT).</p></div></li></ul></div></li></ol></div></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2c236bbf-e0b5-8033-9a6b-efd3131a54ea" class="numbered-list" start="4"><li><mark class="highlight-orange"><strong>DistilRoBERTa</strong></mark> (Transformer-based)<div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-80e0-8b12-fa1ab7af3732" class="">It is a <strong>distilled version</strong> of RoBERTa, which itself is a variant of the BERT model.</p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-806f-8786-ce39d25947a7" class="">This process makes the model smaller and faster by:</p></div><div style="display:contents" dir="auto"><ul id="2c236bbf-e0b5-80d3-a70c-c4eb255b2d29" class="bulleted-list"><li style="list-style-type:disc">reducing the model size by up to <strong>40%</strong>.</li></ul></div><div style="display:contents" dir="auto"><ul id="2c236bbf-e0b5-80b3-a117-eff12d8efdb9" class="bulleted-list"><li style="list-style-type:disc">making it faster by <strong>60%</strong>.</li></ul></div><div style="display:contents" dir="auto"><ul id="2c236bbf-e0b5-803f-950a-dc8ecb7d98a4" class="bulleted-list"><li style="list-style-type:disc">retaining<strong> 97% </strong>of its language understanding capabilities.</li></ul></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-80ec-a56c-d6d0e5eabef7" class="">The fundamental mechanism to learn language is the <strong>Masked Language Modelling</strong> (MLM).</p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8051-8184-c6892b76086d" class="">👉 <mark class="highlight-teal">Training process: </mark></p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-80ba-af03-c8545069c5b9" class="">🟡 The model is given a sentence, but some random words (tokens) is hidden or <strong>masked. </strong>For RoBERTa, is applied with a <strong>15% </strong>masking probability.</p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-80cd-acbc-f6bea66868c9" class="">🟡 The model is then trained to predict the <strong>unmasked</strong> word using the surrounding words as context. ➡️ This pre-training allows the model to learn the semantic and syntactic properties of the language.</p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-80e4-8a8a-f15196f30b6b" class="">🟡 After pre-training, the model can be <strong>fine-tuned</strong> to address specific tasks in the same language, such as argument link prediction.</p></div></li></ol></div><div style="display:contents" dir="auto"><hr id="2c036bbf-e0b5-8093-b58b-d53e52aa5a7d"/></div><div style="display:contents" dir="auto"><h3 id="2c036bbf-e0b5-803d-bab6-d76dd4e6e0d6" class="">👀 <mark class="highlight-blue">Results:</mark></h3></div><div style="display:contents" dir="ltr"><figure id="2c236bbf-e0b5-8085-8e5c-f36d67e1cc3a" class="image"><a href="image%205.png"><img style="width:672px" src="image%205.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8025-911d-c8f2a5eb49d8" class="">🟥 The <mark class="highlight-red">ResAttArg Ensemble</mark> shows the best results on the link prediction task. It achieved a maximum F1 score of <strong>0.41</strong> on the positive class (link) and a macro average of <strong>0.70</strong>. </p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8001-8710-d78bdc78677b" class="">🟥 The distance constraint does not play a crucial role in training, ➡️ showing robustness of the approach.</p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8082-8f9a-ee2abccdd224" class="">🟥 The  <mark class="highlight-red">DistilRoBERTa</mark> model performed poorly without intervention. using of oversampling generally improved DistilRoBERTa&#x27;s performance but significantly degraded the performance of the <mark class="highlight-red">ResAttArg Ensemble</mark><mark class="highlight-default">.</mark></p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8002-9070-c5bc6d2e5dbc" class="">🟥 For secondary tasks → The residual model slightly improved the macro F1 score for <strong>component classification</strong> (distinguishing premises and conclusions) compared to prior work.</p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-80ee-8ca6-fd5ab4dfd324" class="">🟥 For secondary tasks → The models were unsuccessful at the task of <strong>relation classification</strong> (predicting the type of link), always predicting the majority class (SUP).</p></div><div style="display:contents" dir="ltr"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2c236bbf-e0b5-8050-89c0-c8ee9c391c2f"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8080-ad07-e60f4eaa027a" class="">This is a citation from the original paper, which I have summarized here. For additional details, refer to the original source.</p></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-8074-8a4b-fba9e44a2175" class="">Please note that all tables and figures are taken from the original paper.</p></div><div style="display:contents" dir="auto"><blockquote id="2c236bbf-e0b5-80a6-8b88-f3c461d9c1d1" class=""><a href="https://aclanthology.org/2022.argmining-1.14/">Detecting Arguments in CJEU Decisions on Fiscal State Aid</a> (Grundler et al., ArgMining 2022)<br/>• Giulia Grundler, Piera Santin, Andrea Galassi, Federico Galli, Francesco Godano, Francesca Lagioia, Elena Palmieri, Federico Ruggeri, Giovanni Sartor, and Paolo Torroni. 2022. <a href="https://aclanthology.org/2022.argmining-1.14/">Detecting Arguments in CJEU Decisions on Fiscal State Aid</a>. In <em>Proceedings of the 9th Workshop on Argument Mining</em>, pages 143–157, Online and in Gyeongju, Republic of Korea. International Conference on Computational Linguistics.</blockquote></div></div></figure></div><div style="display:contents" dir="auto"><p id="2c236bbf-e0b5-800d-b85a-f375927b80a3" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
